@@ -1,0 +1,26 @@
+Installation and Usage Guide:
+
+1. install wsl
+(wsl --install)
+
+2. install ubuntu
+(sudo apt update)
+(sudo apt install qemu-user gcc-arm-linux-gnueabi)
+
+3. create a project folder in Ubuntu
+(mkdir ~/arm-calculator && cd ~/arm-calculator)
+
+4. create the assembly file
+(nano Calculator.s)
+
+5. paste calculator code into GNU nano
+
+6. ctrl + O to save
+7. ctrl + X to exit
+
+8. run on ubuntu
+(arm-linux-gnueabi-as Calculator.s -o Calculator.o)
+(arm-linux-gnueabi-ld Calculator.o -o Calculator)
+(qemu-arm ./Calculator)
+
+9. input the numbers
